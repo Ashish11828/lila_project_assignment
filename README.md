@@ -50,7 +50,9 @@ python -m http.server 8000 --directory app/public
 5. Open:
 
 ```text
-http://localhost:8000
+http://127.0.0.1:8130/index.html
+
+
 ```
 
 ## Deployment
