@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LILA BLACK Player Journey Explorer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="panel">
+        <div class="brand">
+          <p class="eyebrow">LILA BLACK</p>
+          <h1>Player Journey Explorer</h1>
+          <p class="subtle">
+            A browser tool for level designers to inspect pathing, combat, loot, and storm pressure.
+          </p>
+        </div>
+
+        <section class="controls">
+          <label>
+            <span>Map</span>
+            <select id="mapSelect"></select>
+          </label>
+          <label>
+            <span>Date</span>
+            <select id="dateSelect"></select>
+          </label>
+          <label>
+            <span>Match</span>
+            <select id="matchSelect"></select>
+          </label>
+        </section>
+
+        <section class="controls">
+          <div class="section-title">Display Layers</div>
+          <label class="check"><input type="checkbox" id="showHumans" checked /> Humans</label>
+          <label class="check"><input type="checkbox" id="showBots" checked /> Bots</label>
+          <label class="check"><input type="checkbox" id="showLoot" checked /> Loot</label>
+          <label class="check"><input type="checkbox" id="showKills" checked /> Kills</label>
+          <label class="check"><input type="checkbox" id="showDeaths" checked /> Deaths</label>
+          <label class="check"><input type="checkbox" id="showStorm" checked /> Storm deaths</label>
+          <label class="check"><input type="checkbox" id="showPaths" checked /> Player paths</label>
+          <label class="check"><input type="checkbox" id="showHeatmap" checked /> Heatmap overlay</label>
+          <label>
+            <span>Heatmap Mode</span>
+            <select id="heatmapType">
+              <option value="traffic">High traffic</option>
+              <option value="kills">Kill zones</option>
+              <option value="deaths">Death zones</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="timeline-panel">
+          <div class="section-title">Playback</div>
+          <div class="timeline-actions">
+            <button id="playButton" type="button">Play</button>
+            <button id="resetButton" type="button">Reset</button>
+          </div>
+          <input id="timeline" type="range" min="0" max="100" value="0" />
+          <div class="timeline-labels">
+            <span id="timelineCurrent">00:00</span>
+            <span id="timelineMax">00:00</span>
+          </div>
+        </section>
+
+        <section class="stats" id="stats"></section>
+      </aside>
+
+      <main class="stage">
+        <div class="map-header">
+          <div>
+            <p class="eyebrow">Live View</p>
+            <h2 id="mapTitle">Select a match</h2>
+          </div>
+          <div id="legend" class="legend"></div>
+        </div>
+        <div class="map-frame">
+          <img id="mapImage" alt="Selected map minimap" />
+          <canvas id="heatmapCanvas" width="1024" height="1024"></canvas>
+          <canvas id="overlayCanvas" width="1024" height="1024"></canvas>
+        </div>
+        <div class="notes" id="notes"></div>
+      </main>
+    </div>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
