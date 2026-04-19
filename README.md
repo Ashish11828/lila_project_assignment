@@ -81,8 +81,10 @@ None.
 
 ## Hosted URL
 
-Set this after pushing:
+GitHub Pages target:
 
 ```text
-https://<your-github-username>.github.io/<your-repo-name>/
+https://ashish11828.github.io/lila_project_assignment/
 ```
+
+If the Pages workflow is enabled in the repository settings, this URL will become the live hosted submission URL.
