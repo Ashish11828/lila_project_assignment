@@ -50,6 +50,8 @@ python -m http.server 8000 --directory app/public
 5. Open:
 
 ```text
+this is working website
+
 http://127.0.0.1:8130/index.html
 
 
